@@ -1,0 +1,40 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "name": "Range Rover",
+      "url": "https://vehicle-images.dealerinspire.com/0c34-11000947/SALYL2FU1SA395523/99aadcde5d43b1b02618e00dde912c0a.jpg",
+      "price": "$210,625"
+    },
+    {
+      "id": "2",
+      "name": "Lamborghini Urus",
+      "url": "https://www.motortrend.com/uploads/2024/02/10-2024-Lamborghini-Urus-front-view.jpg?w=768&width=768&q=75&format=webp",
+      "price": "$237,848"
+    },
+    {
+      "id": "3",
+      "name": "Mercedes Maybach",
+      "url": "https://hips.hearstapps.com/hmg-prod/images/2025-mercedes-maybach-103-66fac5ea8d508.jpg?crop=0.676xw:0.762xh;0.244xw,0.214xh&resize=768:*",
+      "price": "$178,450"
+    },
+    {
+      "id": "4",
+      "name": "Toyota Supra",
+      "url": "https://hips.hearstapps.com/hmg-prod/images/2025-toyota-gr-supra-102-668c519da0fe1.jpg?crop=0.638xw:0.538xh;0.152xw,0.178xh&resize=2048",
+      "price": "$44,640"
+    },
+    {
+      "id": "5",
+      "name": "Toyota Corolla",
+      "url": "https://media.ed.edmunds-media.com/toyota/corolla/2023/oem/2023_toyota_corolla_sedan_xse_fq_oem_1_1280.jpg",
+      "price": "$22,175"
+    },
+    {
+      "id": "6",
+      "name": "Toyota Corolla ",
+      "url": "https://hips.hearstapps.com/hmg-prod/images/toyota-corolla-wagon-side-1536071022.jpg",
+      "price": "$28,400"
+    }
+  ]
+}

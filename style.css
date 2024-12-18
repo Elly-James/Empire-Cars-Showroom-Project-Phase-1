@@ -1,0 +1,488 @@
+
+
+
+  /* Body and HTML Styles */
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+
+
+
+  /*HEADER SECTION*/
+
+
+
+/* Increase the font size of "Empire Cars" */
+.company-name {
+    font-size: 1.8rem;                        /* Adjusting size */
+    font-weight: bold;
+}
+
+/* Center the links and align the search bar to the right */
+.navbar-nav {
+    margin-left: 30px;
+    
+}
+
+/* Adjust the search box and button */
+form.d-flex {
+    margin-left: auto;                       /* Push search box to the far right */
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid white; 
+    margin-right: 10px;
+}
+
+.logo:hover{
+    transform: scale(1.2) translateY(-10px);
+}
+
+
+/*DISPLAY SECTION FOR THE CARS AND ADD VEHICLE FORM*/
+
+
+/* Main container for the car cards */
+.cards{
+  background-image: url(/home/smoking/Phase1/Empire-Cars-Showroom-Project-Phase-1/joe-dudeck-5cLevaOKG5U-unsplash.jpg);  /*background image */
+  padding: 50px 0; /* Add some padding to the section */
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Car container that holds all the cards */
+.car_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);            /* Two cards per row */
+  gap: 20px;                                     /* Space between cards */
+  padding: 20px;
+}
+
+/* Styling for individual car cards */
+.car-card {
+  background-color: white;                         /* White background for cards */
+  border-radius: 25px;                                /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);           /* Light shadow around the card */
+  overflow: hidden;                                   /* Ensure the image stays within the card boundaries */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the image container */
+.car-image-container {
+  width: 100%;
+  height: 400px;                              /* Fixed height for the images */
+  overflow: hidden;                         /* Hide anything exceeding the container */
+}
+
+/* Car image should cover the container without stretching */
+.car-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                      /* Ensure the image covers the container proportionally */
+}
+
+/* Styling for car card content */
+.car-card h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.car-card p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Button container for the cards */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-container button {
+  padding: 10px 15px;
+  background-color:  #097aa0;  ;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  background-color: rgb(255, 68, 51);;
+}
+
+.cards, .form{
+  background-image: url(/home/smoking/Phase1/Empire-Cars-Showroom-Project-Phase-1/joe-dudeck-5cLevaOKG5U-unsplash.jpg); /*image on the background*/
+  padding: 50px 0;                    /* Adding some padding to the section */
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Styling for the form section */
+.container_form {
+  background-color: rgba(255, 255, 255, 0.7);          /* Transparent white background for the form */
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 25px;
+  width: 80%;
+  max-width: 600px;
+}
+
+form .form-control {
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  background-color: rgb(16, 172, 112);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: rgb(26, 145, 42);
+}
+
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .car_container {
+      grid-template-columns: repeat(1, 1fr);         /* 1 card per row on smaller screens */
+  }
+}
+
+
+
+
+/* General button styles for both availability and pick vehicle buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Specific styling for the Check Availability button */
+.availability-button {
+  background-color: #28a745;    /* Green */
+  color: white;
+  margin-right: 10px;
+}
+
+.availability-button:hover {
+  background-color: #218838;   /* Darker green on hover */
+}
+
+/* Specific styling for the Pick Vehicle button */
+.pick-vehicle-button {
+  background-color: #097aa0; 
+  color: white;
+}
+
+.pick-vehicle-button:hover {
+  background-color: orangered;                               
+}
+
+/* Add spacing between the buttons */
+.button-container {
+  margin-top: 10px;
+}
+
+/* Optional: Responsive layout for buttons (stack on smaller screens) */
+@media (max-width: 768px) {
+  .button-container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .button-container button {
+      margin-bottom: 10px;
+      width: 100%;
+  }
+}
+
+
+
+
+
+
+/* BOOKING TEST DRIVE SECTION */
+
+
+.section_form {
+  background-color: rgba(0, 0, 0, 0.5);                     /* Transparent background */
+  padding: 40px 30px;                                         /* Padding for inner spacing */
+  margin: 30px auto;                                          /* Center the form vertically and horizontally */
+  width: 60%;                                                 /* Form width */
+  max-width: 800px;                                           /* Max width for larger screens */
+  border-radius: 25px;                                         /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);                   /* Outer shadow for depth */
+  color: white; 
+}
+
+/* Styling for Calendar Container */
+.section_form .container_calender {
+  margin-top: 20px;
+  margin-bottom: 20px;                                    /* Space around the calendar */
+  background-color: rgba(0, 0, 0, 0.5);                 /* Transparent background */
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);   /* Inner shadow for depth */
+}
+
+/* Styling for Calendar Card */
+.section_form .card {
+  background-color: rgba(0, 0, 0, 0.3);                    /* Transparent card background */
+  border-radius: 25px; 
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);             /* Inner shadow for the card */
+  color: white; 
+}
+
+/* Styling for Card Body */
+.section_form .card-body {
+  padding: 20px; 
+  background-color: rgba(0, 0, 0, 0.5);                         /* Transparent body background */
+  border-radius: 25px;                                         /* Rounded corners */
+  color: white;
+}
+
+/* Form Title Styling */
+.section_form h2 {
+  font-size: 1.8rem;
+  text-align: center;                             /* Center align title */
+  margin-bottom: 20px;                                     
+  color: white;                                   /* White text */
+}
+
+/* Input Field Styling */
+.section_form .form-control {
+  background-color: rgba(255, 255, 255, 0.2);                      /* Transparent input background */
+  color: white;                                                     /* White text for inputs */
+  border: 1px solid rgba(255, 255, 255, 0.5);                      /* Light border */
+  border-radius: 5px;                                             /* Rounded corners */
+  padding: 10px;                                                      
+  font-size: 1rem;                                                       
+  margin-bottom: 15px;                                          /* Space between fields */
+  transition: all 0.3s ease;                                   /* Smooth focus effect */
+}
+
+/* Input Field Hover and Focus */
+.section_form .form-control:hover,
+.section_form .form-control:focus {
+  border-color: rgba(255, 255, 255, 0.8);          /* Brighter border on focus */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);     /* Glow effect */
+  outline: none;                                  /* Remove default outline */
+}
+
+/* Placeholder Styling */
+.section_form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);      /* Light placeholder color */
+  font-style: italic;                       /* Italic placeholder */
+}
+
+/* Label Styling */
+.section_form .form-label {
+  font-weight: bold;
+  color: white;                     /* White text for labels */
+}
+
+/* Form Text Styling */
+.section_form .form-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);            /* Subtle white text */
+}
+
+/* Button Styling */
+.section_form button {
+  background-color: rgba(0, 0, 0, 0.5);               /* Transparent button background */
+  color: white;                                     /* White text */
+  border: 1px solid rgba(255, 255, 255, 0.5);         /* Light border */
+  padding: 10px 20px;         /* Button padding */
+  border-radius: 20px;          /* Rounded corners */
+  font-size: 1rem;            /* Standard font size */
+  cursor: pointer;            /* Pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;        /* Smooth hover effect */
+}
+
+.section_form button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  color: rgba(255, 255, 255, 0.9); /* Brighter text on hover */
+}
+
+/* Submit Button Specific Styling */
+.section_form button[type="submit"] {
+  width: 100%; /* Full-width button */
+  margin-top: 20px; /* Space above button */
+}
+
+/* Modal Styling */
+.section_form .modal-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark transparent modal */
+  border-radius: 25px; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section_form {
+    width: 90%; /* Wider form on smaller screens */
+  }
+}
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+    background-color:  #343a40 !important;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contents {
+    margin: 10px;
+    text-align: center;
+}
+
+footer .footer-contents .logo img {
+    width: 80px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: white; 
+}
+
+
+/* Container Styling */
+.container {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  /* Footer Styling */
+  .footer {
+    background:  #343a40 !important; 
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-top: 3px solid white; 
+  }
+  
+  /* Footer Content Sections */
+  .footer-contents {
+    flex: 1 1 200px; /* Responsive Flex Items */
+    margin: 10px;
+    color: white; 
+  }
+  
+  /* Logo Styling */
+  .logo2 img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid white; 
+  }
+
+  .logo2 img:hover{
+    transform: scale(1.2) translateY(-10px);
+  }
+  
+  /* Title Styling */
+  .title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: white; 
+    font-weight: bold;
+  }
+  
+  /* Address Styling */
+  .address {
+    font-size: 14px;
+    margin: 10px 0;
+    color: white;
+  }
+  
+  /* Contact Section Styling */
+  .contact {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Social Media Icons */
+  .social-media a {
+    color: white; /* Default Icon Color */
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: orangered; /* Hover Color */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column; /* Stack Items on Smaller Screens */
+    }
+    .footer-contents {
+      margin: 15px 0;
+    }
+  }
+
+  
+
+
+
+
+
+
+
+
+
