@@ -23,6 +23,7 @@
 .company-name {
     font-size: 1.8rem;                        /* Adjusting size */
     font-weight: bold;
+    color: gold;
 }
 
 /* Center the links and align the search bar to the right */
@@ -40,13 +41,60 @@ form.d-flex {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 3px solid white; 
+    border: 3px solid gold; 
     margin-right: 10px;
-}
+    }
+ 
 
 .logo:hover{
     transform: scale(1.2) translateY(-10px);
 }
+
+
+/* Style the search input box */
+form.d-flex .form-control {
+  font-size: 1rem;                                        /* Increase font size for better readability */
+  padding: 10px 15px;                                    /* Add padding for a more comfortable input field */
+  border-radius: 20px;                                    /* Rounded corners for a sleek look */
+  border: 2px solid #28a745;                             /* Add a green border to match the button */
+  background-color: rgba(255, 255, 255, 0.8);           /* Slightly transparent background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);               /* Subtle shadow for depth */
+  transition: all 0.3s ease;                              /* Smooth transition for focus effect */
+}
+
+/* Change border color on focus */
+form.d-flex .form-control:focus {
+  border-color: #34d058;                                   /* Brighter green on focus */
+  outline: none;                                              /* Remove default outline */
+  box-shadow: 0px 4px 8px rgba(52, 208, 88, 0.4);           /* Enhance shadow effect */
+}
+
+/* Style the search button */
+form.d-flex .btn {
+  font-size: 1rem;                                      /* Match font size with input box */
+  padding: 10px 20px;                               /* Add padding for a balanced appearance */
+  border-radius: 20px;                                /* Rounded corners for a modern look */
+  background-color: #28a745;                           /* Green background */
+  color: white;                                       /* White text for contrast */
+  border: none;                                         /* Remove default border */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);           /* Subtle shadow for depth */
+  transition: all 0.3s ease;                             /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+form.d-flex .btn:hover {
+  background-color: #34d058;                               /* Brighter green on hover */
+  box-shadow: 0px 4px 8px rgba(52, 208, 88, 0.4);            /* Enhance shadow effect */
+  transform: scale(1.05);                                      /* Slight zoom effect */
+}
+
+/* Adjust spacing between input box and button */
+form.d-flex .me-2 {
+  margin-right: 10px;                      /* Add spacing between input and button */
+}
+
+
+
 
 
 /*DISPLAY SECTION FOR THE CARS AND ADD VEHICLE FORM*/
@@ -180,7 +228,7 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -426,7 +474,7 @@ footer .social-media a:hover {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 3px solid white; 
+    border: 3px solid gold; 
   }
 
   .logo2 img:hover{
@@ -437,7 +485,7 @@ footer .social-media a:hover {
   .title {
     font-size: 24px;
     margin-top: 10px;
-    color: white; 
+    color: gold; 
     font-weight: bold;
   }
   
