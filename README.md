@@ -109,6 +109,11 @@ The project uses the Cars API from [RapidApi-ninjas] (https://rapidapi.com/apini
   * Most of the cars available in the API data does not coincide with the type of cars I wanted my website to render ``luxury cars``.
   * Therefore, I partially accessed the details of the API data like``class:"compact car", combination_mpg:24, cylinders:4, displacement:1.6, drive:"fwd", fuel_type:"gas", highway_mpg:26, make:"toyota", model:"corolla" and transmission:"a`` and assigned them to my cars in the json file.
   * Hence, the cars details available in the gallery does not coincide with the specific car displayed. We did this to illustrate how to use a Public API data in any website development.
+ 
+## Feature Plans
+* I plan to implement the website using a good working public Api that can provide me with all data that i need to implement all functionalities.
+* Modify the site and add alot of features like ``sending a user notification via the email after booking test drive``
+  
   
 
 
