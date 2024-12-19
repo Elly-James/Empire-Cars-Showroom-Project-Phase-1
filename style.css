@@ -102,7 +102,7 @@ form.d-flex .me-2 {
 
 /* Main container for the car cards */
 .cards{
-  background-image: url(/home/smoking/Phase1/Empire-Cars-Showroom-Project-Phase-1/joe-dudeck-5cLevaOKG5U-unsplash.jpg);  /*background image */
+  background-image: url(joe-dudeck-5cLevaOKG5U-unsplash.jpg);  /*background image */
   padding: 50px 0; /* Add some padding to the section */
   background-repeat: no-repeat;
   background-position:center;
@@ -178,7 +178,7 @@ form.d-flex .me-2 {
 }
 
 .cards, .form{
-  background-image: url(/home/smoking/Phase1/Empire-Cars-Showroom-Project-Phase-1/joe-dudeck-5cLevaOKG5U-unsplash.jpg); /*image on the background*/
+  background-image: url(joe-dudeck-5cLevaOKG5U-unsplash.jpg); /*image on the background*/
   padding: 50px 0;                    /* Adding some padding to the section */
   background-repeat: no-repeat;
   background-position:center;
