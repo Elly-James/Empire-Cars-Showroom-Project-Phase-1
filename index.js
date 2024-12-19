@@ -4,15 +4,17 @@
 //TASK ONE: FETCHING DATA FROM JSON AND NINJA API AND DISPLAYING IT
 
 
+
 /*
-* An async function is a JavaScript function that allows you to write asynchronous code in a cleaner and more readable way using await.
-* Inside an async function, you can use the await keyword to pause execution until a promise resolves, rather than using callbacks or .then().
-* A try block is used to handle errors in JavaScript. It allows you to "try" a block of code and handle 
-   any exceptions or errors that occur within that block.
-* The continue statement skips the current iteration of a loop and moves to the next iteration.
-* In this case, if fetching car data for a specific model fails (i.e., response.ok is false), 
-  the program logs a warning and skips to the next model, instead of stopping the entire loop.
-* The await keyword is used to pause the execution of the async function until the promise returned by the fetch resolves.
+* An async function is a JavaScript function to make an asynchronous code look less messy using the await keyword.
+* Asynchronous functions are defined by using the async keyword before a function’s declaration; within an async function, instead of using callbacks or .then(),
+    the await keyword is used to wait for a promise to be resolved.
+* try is used to handle error in JavaScript and its statement is called as try block. It lets you “try” a block of code and manage 
+   all the exceptions or errors, which may happen, within that block.
+* The continue statement interrupts an iterative operation in a loop and proceeds to the next operational cycle.
+* In this program, if fetching car data for a particular model is not successful (response.ok is false) 
+  the program writes a warning and goes to the next model without halting the entire loop.
+* The wait keyword used in the function keyword is used in order to wait in the async function for the promise of the fetch to call resolve.
 
 */
 
@@ -62,14 +64,19 @@ async function fetchCarData() {
         }
 
         // Assign API details to your local cars
-        const carsWithDetails = localCars.map((car, index) => {  /*.map() method creates a new array by applying a function to each element of the
-                                                                   original array (localCars in this case).
-                                                                   The % (modulus) operator calculates the remainder of the division of index by carModels.length.
+        const carsWithDetails = localCars.map((car, index) => {  /*
+                                                                  * This is a method available in JavaScript that enables one determine if a variable, in this particular case; 
+                                                                    localCars is an array or not. 
+                                                                  * If localCars is an array then it returns true, and false if not.
+                                                                  * The NOT ! operator take the negation of the result. Thus, checks whether the localCars is not an array.used to confirm that localCars is an array before applying array operations for properties such as forEach, map.                                            It returns true if localCars is an array, and false otherwise.
+                                                                  * The NOT ! operator negates the output given. Now here it checks if localCars is not an array.
+                                                                  * It used to ensure that localCars is an array before performing array-specific operations (like forEach and map)
                                                                    */
 
             const modelKey = carModels[index % carModels.length];        // Cycles through car models  e.g 3%5 = element in index 3
-            return { ...car, ...carDetails[modelKey] };     /* uses the spread operator (...) to merge properties from two objects (car and 
-                                                               carDetails[modelKey]) into a new object, which is then returned.*/
+            return { ...car, ...carDetails[modelKey] };     /* uses the spread operator (...) to join the properties from the two objects (car and 
+                                                               carDetails[modelKey]) into a new object, which is provided as an output
+                                                               Since the spread operator does not destructively interfere with the original array*/
 
         });
 
@@ -352,10 +359,10 @@ document.addEventListener('DOMContentLoaded', () => {
 //TASK FOUR: USIND POST METHOD TO ADD A VEHICLE TO THE DISPLAY
 
 
-// Function to handle the form submission
+// Here we are handling the submit button for the form  by adding the event listeners
 
 function handleSubmit(e) {
-    e.preventDefault();                         // Prevents form reload on submit
+    e.preventDefault();                         // This prevents the form from reload on submit
   
     const form = e.target;
   
@@ -368,7 +375,7 @@ function handleSubmit(e) {
       url: form['vehicle-image'].value.trim(),
     };
   
-    // Checking if all fields are filled in the form
+    // This ensures that the user fills all the fields
 
     const isFormValid = Object.values(vehicle).every(value => value !== "");
     if (!isFormValid) {
@@ -376,42 +383,45 @@ function handleSubmit(e) {
       return;
     }
   
-    // Call addVehicle to POST the vehicle data
+    // calling the AddVehicle function to Post the data
 
     addVehicle(vehicle);
   
-    // Reset the form after submission
+    // This resets the form to ensure it remains empty after submission
 
     form.reset();
 }
 
-// Function to add a vehicle by sending POST request
+//This function adds the vehicle data to the gallery by using POST
 
 function addVehicle(vehicle) {
-    fetch('http://localhost:3000/cars', {  // The URL where the data will be posted
-      method: 'POST',                         // POST method to send data
+    fetch('http://localhost:3000/cars', {  // The URL for the json file
+      method: 'POST',                         // Specifying the fetch method to be used
       headers: {
         'Content-Type': 'application/json',   // Specifying that the data is in JSON format
       },
-      body: JSON.stringify(vehicle),          // Convert the vehicle object to a JSON string
+      body: JSON.stringify(vehicle),          // Converts the vehicle object to a JSON string
     })
-      .then(res => res.json())                // Parse the response as JSON
+      .then(res => res.json())                // Passes the data into a JSON data
       .then(addedVehicle => {
         console.log('Vehicle added:', addedVehicle);
   
-        // Displaying vehicle in DOM (creating a custom DOM structure here)
+        // Displaying vehicle POSTED in DOM  by creating elements that will hold it in the DOM
 
-        const vehicleContainer = document.querySelector('.car_container');
+        const vehicleContainer = document.querySelector('.car_container');   // Obtaining the  element from the DOM
+         
         const vehicleElement = document.createElement('div');
         vehicleElement.classList.add('vehicle');
+         // creating the elements for our new data to be posted
         vehicleElement.innerHTML = `
           <h3>${addedVehicle.name}</h3>
           <p>Price: ${addedVehicle.price}</p>
           <img src="${addedVehicle.url}" alt="Vehicle Image" width="200">
         `;
+         //Appending the created element into the vehicle container
         vehicleContainer.appendChild(vehicleElement);
   
-        // Alerts the user
+        // Alerts the user user that the given vehicle was added successfully
 
         alert(`Vehicle "${addedVehicle.name}" added successfully!`);
       })
@@ -514,17 +524,16 @@ searchForm.addEventListener('submit', async (e) => {
     }
 
     /* 
-    * Filter cars based on search term
-    * The filter method iterates over each car object in the originalCars array.
-    * For each car, it checks if the searchTerm is present in the car's name, make, or model.
-    * If at least one of these conditions is true, the car is included in the filteredCars array.
-    * The includes method is a string method that checks whether a given substring is present in the string. 
-    * It is case-sensitive by default.
-    * E.g string.includes(substring) returns true if substring is found in string, otherwise false
-    * If car.make or car.model is undefined or null, the ?. prevents the code from breaking.
-    * If the property is undefined or null, the expression evaluates to undefined instead of throwing an error.
-    * || used to evaluate multiple conditions and returns true if at least one of the conditions is true. 
-    * If all conditions are false, it returns false.
+    *The filter method allows us to filter cars that we will be searching based on the search string
+    *The filter method takes each one car object from the originalCars array.
+    * For each car, it first scans if the searchTerm is found in the car’s name or make or model of the car.
+    * This means that if at least one of these rules is met then the car is added to the filteredCars list.
+    * The includes method It is a string method that ensures whether a particular variable is present or contained in the string. 
+    *For instance string.includes(substring) which returns True if substring is in string otherwise False
+    * The ternary operator ‘?’ is quite useful if car.make or car.model is undefined or null, it does not let the code stop working.
+    * If the property is omited or the property reference is null, the expression returns the value of undefined, rather than running an error.
+    * The OR operator || is the logical operator that can be used to test one or more conditions and if at least one of those conditions returns true. 
+    * If all conditions are false it gives false.
     */
 
     const filteredCars = originalCars.filter(car => {     
