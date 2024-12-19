@@ -1,6 +1,6 @@
 # Empire Cars Showroom
 
-Check out the Website: [Link to Live Project]()
+Check out the Website: [Link to Live Project](https://elly-james.github.io/Empire-Cars-Showroom-Project-Phase-1/)
 
 
 ## Project Description
